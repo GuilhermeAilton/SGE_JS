@@ -3,11 +3,12 @@ const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const routes = require('./routes');
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use('/api', routes);
 
-sequelize.sync()
+sequelize.sync({ force: true })
   .then(() => {
     console.log('Conectado ao banco de dados');
     app.listen(3000, () => {

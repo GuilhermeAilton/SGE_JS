@@ -4,6 +4,7 @@ const UsuarioController = require('../controllers/UsuarioController');
 const ClienteController = require('../controllers/ClienteController');
 const PedidoController = require('../controllers/PedidoController');
 const DetalhePedidoController = require('../controllers/DetalhePedidoController');
+const CategoriaController = require("../controllers/CategoriaController")
 const ProdutoController = require('../controllers/ProdutoController');
 const verifyJWT = require('../middleware/auth')
 
@@ -25,5 +26,7 @@ router.post('/detalhespedido', DetalhePedidoController.createDetalhePedido);
 
 // Rotas de Produto
 router.post('/produtos', ProdutoController.createProduto);
+
+router.post('/categorias', CategoriaController.createCategoria);
 
 module.exports = router;
